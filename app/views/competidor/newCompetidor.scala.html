@@ -1,0 +1,21 @@
+@(form: Form[Competidor])
+
+@main{
+  @helper.form(action = routes.CompetidorController.guardarNuevo(), 'id -> "competidor_registration_form", 'method -> "POST") {
+    <fieldset>
+      @helper.inputText(
+        form("nombre"),
+        '_label -> "Nombre",
+        '_showConstraints -> false
+      )
+      @helper.inputText(
+        form("email"),
+        '_label -> "E-mail",
+        '_showConstraints -> false
+      )
+    </fieldset>
+    <button type="submit">Registrarse</button>
+
+  }
+
+}

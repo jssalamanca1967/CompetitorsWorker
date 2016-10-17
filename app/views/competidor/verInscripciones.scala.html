@@ -1,0 +1,35 @@
+@(competidor: Competidor)
+
+@main {
+
+    @if(competidor != null) {
+        <p><b>Nombre: </b>@competidor.nombre</p>
+        <p><b>E-mail: </b>@competidor.email</p>
+        <a class="btn btn-primary btn-lg" href=@routes.CompetidorController.verInscripciones(competidor.id) role="button"/>
+            Ver inscripciones
+        </a>
+        <a class="btn btn-primary btn-lg" href=@routes.CompetidorController.verCompetencias(competidor.id) role="button"/>
+            Ver competencias
+        </a>
+        @for(inscripcion <- competidor.inscripciones) {
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src=@inscripcion.rutaImagen>
+                        <div class="caption">
+                            <h3>@inscripcion.nombre</h3>
+                            <p>@inscripcion.descripcion</p>
+                            <p><a href="@routes.CompetidorController.verInscripcion(competidor.id, inscripcion.competencia.id)" class="btn btn-primary" role="button">Ver más</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+    } else {
+        <p>El competidor que está buscando no existe</p>
+    }
+
+
+}

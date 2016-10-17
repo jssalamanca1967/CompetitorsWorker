@@ -1,0 +1,32 @@
+@(competidor: Competidor, competencia: Competencia, form: Form[Inscripcion])
+
+@main{
+
+    @helper.form(action = routes.CompetidorController.guardarInscripcion(competidor.id, competencia.id), 'id -> "competidor_inscripcion_form", 'method -> "POST", 'enctype -> "multipart/form-data") {
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Inscribete</h2>
+
+        @helper.inputText(
+          form("nombre"),
+          '_label -> "Nombre",
+          '_showConstraints -> false
+        )
+        @helper.inputText(
+          form("descripcion"),
+          '_label -> "Descripción",
+          '_showConstraints -> false
+        )
+        @helper.inputFile(
+            form("imagen"),
+            '_label -> "Imagen",
+            '_showConstraints -> false
+        )
+
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Registrarse</button>
+      </form>
+
+    }
+
+
+}

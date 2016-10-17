@@ -1,0 +1,27 @@
+@(competidores: List[Competidor])
+
+@main{
+
+  <table class="table table-striped table-responsive">
+    <thead>
+      <tr>
+        <th><h3>Nombre</h3></th>
+        <th><h3>E-mail</h3></th>
+        <th><h3>Fecha inscripción</h3></th>
+        <th><h3>Acciones</h3></th>
+      </tr>
+    </thead>
+
+    @for(competidor <- competidores){
+
+      <tr>
+        <th scope=row><h4>@competidor.nombre</h4></th>
+        <td><h4>@competidor.email</h4></td>
+        <td><h4>@competidor.created.toString</h4></td>
+        <td><h4><a href=@routes.CompetidorController.mostrar(competidor.id)>Ver más</a></h4></td>
+      </tr>
+
+    }
+  </table>
+
+}

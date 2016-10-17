@@ -1,0 +1,23 @@
+@(competidor: Competidor)
+
+@main {
+
+  @if(competidor != null) {
+    <p><b>Nombre: </b>@competidor.nombre</p>
+    <p><b>E-mail: </b>@competidor.email</p>
+    <a class="btn btn-primary btn-lg" href=@routes.CompetidorController.verInscripciones(competidor.id) role="button"/>
+      Ver inscripciones
+    </a>
+    <a class="btn btn-primary btn-lg" href=@routes.CompetidorController.verCompetencias(competidor.id) role="button"/>
+      Ver competencias
+    </a>
+
+
+
+  }else{
+    <p>El competidor que está buscando no existe</p>
+  }
+
+
+
+}
