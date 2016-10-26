@@ -18,7 +18,7 @@ public class HomeController extends Controller {
     public static final String AWS_SECRET_KEY = "aws.secret.key";
 
     public Result loaderio() {
-        return ok("loaderio-c94b8b38689af204096c8b2bc5f37236");
+        return ok("loaderio-74b8c9acf9a3218e513839e1b7f8c1a9");
     }
 
     public Result enviar(){
