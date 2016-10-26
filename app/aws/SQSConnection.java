@@ -68,10 +68,4 @@ public class SQSConnection {
         String mensajes = result.getAttributes().get("ApproximateNumberOfMessages");
         return Integer.parseInt(mensajes);
     }
-
-    public void envviar100Mensajes(){
-        for(int i = 0; i < 100; i++){
-            sendMessage("Hola" + i);
-        }
-    }
 }

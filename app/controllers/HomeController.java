@@ -21,9 +21,9 @@ public class HomeController extends Controller {
         return ok("loaderio-c94b8b38689af204096c8b2bc5f37236");
     }
 
-    public Result enviar100(){
+    public Result enviar(){
         SQSConnection sqs = new SQSConnection();
-        sqs.envviar100Mensajes();
+        sqs.sendMessage("Hola");
         return ok("Enviando");
     }
 
